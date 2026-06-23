@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.detailWrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.imageWrapper {
+  flex: 0 0 70%;
+  position: relative;
+  padding-bottom: 40%;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.analysisTable {
+  width: 100%;
+  border-collapse: collapse;
+  color: #1d1d1d;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.analysisTable th,
+.analysisTable td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.analysisTable th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #222;
+}
+
+.analysisTable tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.analysisTable tr:hover {
+  background-color: #eef7ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+.image {
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.textWrapper {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Titles and text */
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1d1d1d;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d1d1d;
+  margin-bottom: 1rem;
+}
+
+.longDescription {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Записаться button */
+.bookButton {
+    width: 190px;
+    height: 40px;
+    background-color: #D5EDF6;
+    border-radius: 20px;
+    border: 1px solid #181515;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2929;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+.bookButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+    background-color: #9bc7fa;
+}
+
+/* MOBILE: stack with image above text */
+@media (max-width: 767px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  .detailWrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .imageWrapper {
+    
+    flex: none;          
+    
+    width: 100%;         
+   
+    height: 300px;       
+    
+    padding-bottom: 0;   
+  }
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .sectionHeader {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .longDescription {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.analysisSection h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: #1d1d1d; /* Сделает видимым */
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
