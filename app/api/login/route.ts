@@ -6,7 +6,8 @@ export const POST = async (req: NextRequest) => {
     const target = new URL(`${BACKEND_URL}/api/cms/login`);
     const body = await req.text();
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 6000);
+    // Allow for a cold backend (free-tier services sleep and take ~30-60s to wake).
+    const timer = setTimeout(() => controller.abort(), 90000);
 
     try {
         const r = await fetch(target, {
