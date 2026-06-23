@@ -20,6 +20,12 @@ server:
 app:
   upload-dir: ${APP_UPLOAD_DIR:./uploads}
 
+# Default ADMIN user seeded on first startup (when users table is empty).
+# Override in production via env vars ADMIN_USERNAME / ADMIN_PASSWORD.
+admin:
+  username: ${ADMIN_USERNAME:admin}
+  password: ${ADMIN_PASSWORD:admin}
+
 yandex:
   gpt:
     api-key: ${YANDEX_GPT_API_KEY:your-api-key}
