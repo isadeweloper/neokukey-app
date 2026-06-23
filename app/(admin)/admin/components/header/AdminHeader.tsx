@@ -1,12 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function AdminHeader() {
     const pathname = usePathname();
+    const router = useRouter();
     // The login page is a clean white screen — no admin chrome there.
     if (pathname === "/login") return null;
+
+    const onLogout = async () => {
+        await fetch("/api/logout", { method: "POST", credentials: "include" }).catch(() => {});
+        router.push("/login");
+        router.refresh();
+    };
 
     return (
         <header
@@ -38,10 +45,24 @@ export default function AdminHeader() {
                     Контент Менеджмент Алины Габдрахмановой
                 </Link>
 
-                <div style={{ display: "flex", gap: 10 }}>
+                <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
                     <Link href="/" style={{ color: "black", textDecoration: "none", fontWeight: 800, opacity: 0.9 }}>
                         На сайт клиники
                     </Link>
+                    <button
+                        onClick={onLogout}
+                        style={{
+                            background: "black",
+                            color: "white",
+                            border: "none",
+                            borderRadius: 6,
+                            padding: "8px 16px",
+                            fontWeight: 700,
+                            cursor: "pointer",
+                        }}
+                    >
+                        Выйти
+                    </button>
                 </div>
             </div>
         </header>
