@@ -6,10 +6,21 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import SearchBar from './Searchbar';
+import RegisterModal from './RegisterModal';
 import styles from './Header.module.css';
+
+const regBtnStyle: React.CSSProperties = {
+  background: 'transparent',
+  border: 'none',
+  padding: 0,
+  font: 'inherit',
+  color: 'inherit',
+  cursor: 'pointer',
+};
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [regOpen, setRegOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,6 +45,9 @@ export default function Header() {
 
       {/* DESKTOP NAV */}
       <nav className={styles.nav}>
+        <button type="button" style={regBtnStyle} onClick={() => setRegOpen(true)}>
+          Регистрация
+        </button>
         <Link href="/services">Услуги</Link>
         <Link href="/doctors">Врачи</Link>
         <Link href="/contacts">Контакты</Link>
@@ -69,6 +83,13 @@ export default function Header() {
           className={styles.mobileNavContent}
           onClick={(e) => e.stopPropagation()} /* prevent close when tapping menu */
         >
+          <button
+            type="button"
+            style={regBtnStyle}
+            onClick={() => { setMenuOpen(false); setRegOpen(true); }}
+          >
+            Регистрация
+          </button>
           <Link href="/services" onClick={() => setMenuOpen(false)}>
             Услуги
           </Link>
@@ -96,6 +117,8 @@ export default function Header() {
           <SearchBar />
         </div>
       </div>
+
+      {regOpen && <RegisterModal onClose={() => setRegOpen(false)} />}
     </header>
   );
 }
