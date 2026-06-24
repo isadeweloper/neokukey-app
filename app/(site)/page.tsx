@@ -9,6 +9,7 @@ import HomeClientShell from '@/app/(site)/components/HomeClientShell';
 import ServicesSection from "@/app/(site)/components/ServiceSection";
 import DoctorsSection from "@/app/(site)/components/DoctorsSection";
 import MobileLandingSection from "@/app/(site)/components/MobileLandingSection";
+import RegisterSection from "@/app/(site)/components/RegisterSection";
 
 export default function HomePage() {
   return (
@@ -20,10 +21,16 @@ export default function HomePage() {
               <ServicesSection />
               <ClinicPhotos />
               <DoctorsSection />
+              <RegisterSection />
               <CookieBanner />
             </>
           }
-          mobile={<MobileLandingSection />}
+          mobile={
+            <>
+              <MobileLandingSection />
+              <RegisterSection />
+            </>
+          }
       />
   );
 }
