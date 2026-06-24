@@ -3,11 +3,11 @@
 .section {
   width: 100%;
   max-width: 1000px;
-  margin: 2.5rem auto;
-  padding: 1rem;
+  margin: 1.5rem auto 2.5rem;
+  padding: 0 1rem;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .card {
