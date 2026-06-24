@@ -36,6 +36,7 @@ export default function Header() {
       <nav className={styles.nav}>
         <Link href="/services">Услуги</Link>
         <Link href="/doctors">Врачи</Link>
+        <Link href="/register">Регистрация</Link>
         <Link href="/contacts">Контакты</Link>
         <Link href="/#address">Адрес</Link>
         <Link href="/eeg">ЭЭГ</Link>
@@ -74,6 +75,9 @@ export default function Header() {
           </Link>
           <Link href="/doctors" onClick={() => setMenuOpen(false)}>
             Врачи
+          </Link>
+          <Link href="/register" onClick={() => setMenuOpen(false)}>
+            Регистрация
           </Link>
           <Link href="/eeg" onClick={() => setMenuOpen(false)}>
             ЭЭГ

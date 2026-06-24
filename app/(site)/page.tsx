@@ -9,14 +9,12 @@ import HomeClientShell from '@/app/(site)/components/HomeClientShell';
 import ServicesSection from "@/app/(site)/components/ServiceSection";
 import DoctorsSection from "@/app/(site)/components/DoctorsSection";
 import MobileLandingSection from "@/app/(site)/components/MobileLandingSection";
-import RegisterSection from "@/app/(site)/components/RegisterSection";
 
 export default function HomePage() {
   return (
       <HomeClientShell
           desktop={
             <>
-              <RegisterSection />
               <InfoBlock />
               <Quote />
               <ServicesSection />
@@ -25,12 +23,7 @@ export default function HomePage() {
               <CookieBanner />
             </>
           }
-          mobile={
-            <>
-              <RegisterSection />
-              <MobileLandingSection />
-            </>
-          }
+          mobile={<MobileLandingSection />}
       />
   );
 }
