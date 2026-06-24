@@ -86,3 +86,21 @@
 .message { font-size: 0.875rem; margin: 0; }
 .error { color: #c0392b; }
 .success { color: #1e7e34; }
+
+.switch {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.switchLink {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #111827;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
