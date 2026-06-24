@@ -16,19 +16,19 @@ export default function HomePage() {
       <HomeClientShell
           desktop={
             <>
+              <RegisterSection />
               <InfoBlock />
               <Quote />
               <ServicesSection />
               <ClinicPhotos />
               <DoctorsSection />
-              <RegisterSection />
               <CookieBanner />
             </>
           }
           mobile={
             <>
-              <MobileLandingSection />
               <RegisterSection />
+              <MobileLandingSection />
             </>
           }
       />
