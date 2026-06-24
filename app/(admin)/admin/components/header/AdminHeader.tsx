@@ -1,8 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function AdminHeader() {
+    const pathname = usePathname();
+    // Login is a clean standalone screen — no admin chrome there.
+    if (pathname === "/login") return null;
+
     return (
         <header
             style={{
