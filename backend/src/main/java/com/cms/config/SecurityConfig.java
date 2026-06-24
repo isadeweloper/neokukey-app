@@ -30,7 +30,6 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/error").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/cms/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/cms/register").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cms/**").permitAll()
 
                         .requestMatchers(HttpMethod.POST, "/api/cms/**").hasRole("ADMIN")

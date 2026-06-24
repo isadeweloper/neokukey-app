@@ -35,19 +35,6 @@ public class Controller {
         servletResponse.addHeader("Set-Cookie", cookie.toString());
         return LoginResponse.builder().token(token).build();
     }
-    @PostMapping("/register")
-    public LoginResponse register(@RequestBody RegisterRequest registerRequest, HttpServletResponse servletResponse){
-        String token = authService.registerAndGetToken(registerRequest);
-        ResponseCookie cookie = ResponseCookie.from("access_token", token)
-                .httpOnly(true)
-                .sameSite("Lax")
-                .path("/")
-                .maxAge(60 * 60)
-                .build();
-
-        servletResponse.addHeader("Set-Cookie", cookie.toString());
-        return LoginResponse.builder().token(token).build();
-    }
     @PostMapping("/logout")
     public void logout(HttpServletResponse servletResponse){
         ResponseCookie cookie = ResponseCookie.from("access_token", "")
